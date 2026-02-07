@@ -3,6 +3,14 @@ from pathlib import Path
 
 PROJECT_DIR = Path(__file__).resolve().parent.parent
 BASE_DIR = PROJECT_DIR.parent
+from django.apps import AppConfig
+
+class WebsiteConfig(AppConfig):
+    default_auto_field = "django.db.models.BigAutoField"
+    name = "website"
+
+    def ready(self):
+        import website.superuser  # noqa
 
 
 
