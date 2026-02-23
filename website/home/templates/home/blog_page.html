@@ -2,7 +2,11 @@
 {% load wagtailcore_tags %}
 
 {% block content %}
-  <h1>{{ page.title }}</h1>
-  <p class="text-muted">{{ page.date }}</p>
-  <div>{{ page.body|richtext }}</div>
+<h1>{{ page.title }}</h1>
+<p class="text-muted">{{ page.date }}</p>
+
+<p>Django and Wagtail together provide a powerful combination for building modern content-managed websites.</p>
+
+<p>This project demonstrates how backend development and CMS customization work together.</p>
+
 {% endblock %}
