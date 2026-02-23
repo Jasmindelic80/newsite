@@ -2,18 +2,11 @@
 {% load wagtailcore_tags %}
 
 {% block content %}
-<h1>About This Project</h1>
+  <h1>{{ page.title }}</h1>
 
-<p>This website was developed as a practical example of a production-ready Wagtail CMS application.</p>
-
-<ul>
-<li>Custom page models (Home, About, Blog, Contact)</li>
-<li>Responsive Bootstrap design</li>
-<li>Editable content through the Wagtail admin panel</li>
-<li>PostgreSQL database integration</li>
-<li>Cloud deployment using Gunicorn and Render</li>
-</ul>
-
-<p>This project demonstrates real-world Django/Wagtail freelance development skills.</p>
-
+  {% if page.body %}
+    <div>
+      {{ page.body|richtext }}
+    </div>
+  {% endif %}
 {% endblock %}
