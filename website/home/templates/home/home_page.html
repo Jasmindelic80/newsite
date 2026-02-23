@@ -1,14 +1,14 @@
+{% extends "base.html" %}
 {% load wagtailcore_tags %}
 
-<h1>{{ page.title }}</h1>
+{% block content %}
+<h1>Welcome to My Demo Wagtail Website</h1>
 
-<ul>
-  {% for child in page.get_children.live.in_menu %}
-    <li><a href="{{ child.url }}">{{ child.title }}</a></li>
-  {% endfor %}
-</ul>
+<p>This is a demonstration website built with <strong>Django and Wagtail CMS</strong>.</p>
 
-<div>
-  {{ page.body|richtext }}
-</div>
+<p>It showcases custom page templates, a dynamic blog, and a functional contact form.</p>
 
+<p>The goal of this project is to demonstrate real-world backend development,
+content management features, and cloud deployment in a clean and responsive layout.</p>
+
+{% endblock %}
