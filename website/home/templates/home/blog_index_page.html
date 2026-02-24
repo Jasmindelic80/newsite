@@ -3,6 +3,17 @@
 
 {% block content %}
   <h1>{{ page.title }}</h1>
-  <p class="text-muted">{{ page.date }}</p>
-  <div>{{ page.body|richtext }}</div>
+  {% if page.intro %}{{ page.intro|richtext }}{% endif %}
+
+  <hr>
+
+  <div class="list-group">
+    {% for post in page.get_children.live %}
+      <a class="list-group-item list-group-item-action" href="{{ post.url }}">
+        <strong>{{ post.title }}</strong>
+      </a>
+    {% empty %}
+      <div class="text-muted">No blog posts yet.</div>
+    {% endfor %}
+  </div>
 {% endblock %}
